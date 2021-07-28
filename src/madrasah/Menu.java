@@ -23,6 +23,7 @@ import madrasah.Koneksi;
 public class Menu extends javax.swing.JFrame {
     Connection conn;
     Statement stat;
+    PreparedStatement pst;
     Koneksi k = new Koneksi();
    
     /**
@@ -130,6 +131,8 @@ public class Menu extends javax.swing.JFrame {
         btn_hapus = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         txt_tahun = new javax.swing.JTextField();
+        idfl = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbl_datarekap = new javax.swing.JTable();
@@ -236,6 +239,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setText("Tahun :");
 
+        jLabel8.setText("ID :");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -244,12 +249,8 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txt_nama, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                         .addComponent(txt_alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(btnsave1)
@@ -279,13 +280,25 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(rb_lunas)
                             .addComponent(cmbbx_bulan, 0, 187, Short.MAX_VALUE)
                             .addComponent(rb_blmlunas)
-                            .addComponent(txt_tgl))))
+                            .addComponent(txt_tgl)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(idfl)
+                            .addComponent(txt_nama, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idfl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(txt_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -301,11 +314,14 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(txt_tahun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rb_lunas)
-                    .addComponent(jLabel15))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rb_lunas)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rb_blmlunas)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -340,7 +356,7 @@ public class Menu extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -348,7 +364,7 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -511,7 +527,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(btnsave_dtsantri)
                         .addGap(42, 42, 42)
                         .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_hapus2))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -685,13 +701,14 @@ public class Menu extends javax.swing.JFrame {
             jenkel = "Perempuan";
         }
         try {
-            String sql = "INSERT INTO datasantri (nama,jenkel,alamat,nohp) value (?,?,?,?)";
+            String sql = "INSERT INTO datasantri (id_santri,nama,jenkel,alamat,nohp) value (?,?,?,?,?)";
             Connection conn = Koneksi.koneksiDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setString(1, txt_namasantri.getText());
-            pst.setString(2, jenkel);
-            pst.setString(3, txt_alamatsantri.getText());
-            pst.setString(4, txt_nohp.getText());
+            pst.setString(1, txt_idsantri.getText());
+            pst.setString(2, txt_namasantri.getText());
+            pst.setString(3, jenkel);
+            pst.setString(4, txt_alamatsantri.getText());
+            pst.setString(5, txt_nohp.getText());
             pst.execute();
             
             JOptionPane.showMessageDialog(null, "Proses Simpan Berhasil");
@@ -720,18 +737,17 @@ public class Menu extends javax.swing.JFrame {
             status = "Belum Lunas";
         }
         try {
-            String sql = "INSERT INTO datarekap (nama,alamat,bulan,tahun,status,tanggal) value (?,?,?,?,?,?)";
+            String sql = "INSERT INTO datarekap (id_rekap,nama,alamat,bulan,tahun,status,tanggal) value (?,?,?,?,?,?,?)";
             Connection conn = Koneksi.koneksiDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setString(1, txt_nama.getText());
-            pst.setString(2, txt_alamat.getText());
-            pst.setString(3, (String) cmbbx_bulan.getSelectedItem());
-            pst.setString(4, txt_tahun.getText());
-            pst.setString(5, status);
-            pst.setString(6, txt_tgl.getText());
+            pst.setString(1, idfl.getText());
+            pst.setString(2, txt_nama.getText());
+            pst.setString(3, txt_alamat.getText());
+            pst.setString(4, (String) cmbbx_bulan.getSelectedItem());
+            pst.setString(5, txt_tahun.getText());
+            pst.setString(6, status);
+            pst.setString(7, txt_tgl.getText());
             pst.execute();
-//            Menu mnu = new Menu();
-//            mnu.setVisible(true);
             JOptionPane.showMessageDialog(null, "Proses Simpan Berhasil");
             Tampilkan_DataRekap();
             Kosongkan_Form();
@@ -751,22 +767,23 @@ public class Menu extends javax.swing.JFrame {
             status = "Belum Lunas";
         }
         try {
-//            Connection conn = Koneksi.koneksiDB();
-            String sql = "update datarekap  set nama=?, alamat=?, bulan=?, tahun=?, status=?, tanggal=? where id_rekap"; 
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, txt_nama.getText());
-            stmt.setString(2, txt_alamat.getText());
-            stmt.setString(3, (String) cmbbx_bulan.getSelectedItem());
-            stmt.setString(4, txt_tahun.getText());
-            stmt.setString(5, status);
-            stmt.setString(6, txt_tgl.getText());
-            stmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Data berhasil diubah", "Pesan", JOptionPane.INFORMATION_MESSAGE);
+            String data = idfl.getText();
+            String value1 = txt_nama.getText();
+            String value2 = txt_alamat.getText();
+            String value3 = (String)cmbbx_bulan.getSelectedItem();
+            String value4 = txt_tahun.getText();
+            String value5 = status;
+            String value6 = txt_tgl.getText();
+            String sql = "update datarekap set nama='" + value1 + "',alamat='" + value2 + "',bulan='" + value3 +"' ,tahun='" + value4 + "'"
+                    + ",status='"+value5+"',tanggal='"+value6+"'where id_rekap='"+data+"'";
+            pst = conn.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Data Berhasil Diupdate");
             Tampilkan_DataRekap();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+        } catch (Exception e) { 
+            System.out.println(e);;
         }
-    
+       
     }//GEN-LAST:event_btnupdate1ActionPerformed
 
     private void cmbbx_bulanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbbx_bulanActionPerformed
@@ -776,9 +793,9 @@ public class Menu extends javax.swing.JFrame {
     private void btn_hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapusActionPerformed
         // TODO add your handling code here:
         try {
-            String sql ="delete from datarekap where id_rekap ";
+            String sql ="delete from datarekap where id_rekap =?";
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
-//            pst.setString(1, "ïd_rekap");
+            pst.setString(1, idfl.getText());
             pst.execute();
             Tampilkan_DataRekap();
         } catch (Exception e) {
@@ -789,7 +806,17 @@ public class Menu extends javax.swing.JFrame {
 
     private void btn_hapus2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapus2ActionPerformed
         // TODO add your handling code here:
-        
+        try {
+            String sql ="delete from datasantri where id_santri=?";
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, txt_idsantri.getText());
+            pst.execute();
+            Tampilkan_DataSantri();
+            JOptionPane.showMessageDialog(null, "sukses");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        Kosongkan_Form();
     }//GEN-LAST:event_btn_hapus2ActionPerformed
 
     private void tbl_datarekapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_datarekapMouseClicked
@@ -807,6 +834,8 @@ public class Menu extends javax.swing.JFrame {
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             java.sql.ResultSet rs = pst.executeQuery();
             if (rs.next()) {
+                String data7 = rs.getString("id_rekap");
+                idfl.setText(data7);
                 String data1 = rs.getString(("nama"));
                 txt_nama.setText(data1);
                 String data2 = rs.getString(("alamat"));
@@ -816,7 +845,6 @@ public class Menu extends javax.swing.JFrame {
                 String data4 = rs.getString(("tahun"));
                 txt_tahun.setText(data4);
                 status = rs.getString(("status"));
-//                rb_lunas.setText(data5);
                 String data6 = rs.getString(("tanggal"));
                 txt_tgl.setText(data6);
                 
@@ -845,19 +873,15 @@ public class Menu extends javax.swing.JFrame {
              ResultSet rs ;
              rs = pst.executeQuery();
              if (rs.next()) {
-                 String data3 = rs.getString(("id_santri"));
+                String data3 = rs.getString(("id_santri"));
                 txt_idsantri.setText(data3);
                 String data1 = rs.getString(("nama"));
                 txt_namasantri.setText(data1);
                  santri = rs.getString(("jenkel"));
-//                 santri = rs.getString(data3);
-                 
                 String data2 = rs.getString(("alamat"));
                 txt_alamatsantri.setText(data2);
                 String hp = rs.getString(("nohp"));
                 txt_nohp.setText(hp);
-                
-       
         }
         }catch (Exception e) {
             System.out.println(e);
@@ -866,22 +890,16 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_tbl_dtsantriMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      
+
            String santri = null ;
          if (rblaki.isSelected()){
             santri = "LAki-laki";
         } else if (rbperempuan.isSelected()){
-            santri = "Perempuans";
+            santri = "Perempuan";
         }try {
-//            String sql ="UPDATE datasantri SET nama=? ,jenkel=?,alamat=?,nohp=? where id_santri=?";
-            String sql ="UPDATE datasantri SET nama='"+txt_nama.getText()+"',jenkel='"+santri+"'"
-                    + ",alamat='"+txt_alamatsantri+"',nohp='"+txt_nohp+"' where id_santri='"+txt_idsantri+"'";
+            String sql ="UPDATE datasantri SET nama='"+txt_namasantri.getText()+"',jenkel='"+santri+"'"
+                    + ",alamat='"+txt_alamatsantri.getText()+"',nohp='"+txt_nohp.getText()+"'where id_santri='"+txt_idsantri.getText()+"'";
             PreparedStatement pst = conn.prepareStatement(sql);
-//            pst.setString(2, txt_namasantri.getText());    
-//            pst.setString(3, santri);
-//            pst.setString(4, txt_alamatsantri.getText());
-//            pst.setString(5, txt_nohp.getText());
-//            pst.setString(1, txt_idsantri.getText());
            pst.execute();
            JOptionPane.showMessageDialog(this,"Data berhasil diubah");
            Tampilkan_DataSantri();
@@ -938,6 +956,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnsave_dtsantri;
     private javax.swing.JButton btnupdate1;
     private javax.swing.JComboBox cmbbx_bulan;
+    private javax.swing.JTextField idfl;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -953,6 +972,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
